@@ -2,9 +2,19 @@ extends layout
 
 block content
   h1= title
-  div.main-page
-    p.main-text Welcome to #{title}. 
-    p.main-text Get ready to meet your fitness goals with FitnessPal. <br /> 
-    p.main-text Answer a few simple questions and receive a customized prompt that you can enter in ChatGPT to receive your personalized routine.
+  
+  img.background-image(src="../images/biking_grey.png" alt="Woman biking")
 
-  img.image(src="../images/stability_ball.png" alt="Woman exercising")
+  div.row
+    
+    div.column.center.main-text.extra-padding
+      p Welcome to #{title}. 
+      p Get ready to meet your fitness goals with FitnessPal.
+      p Answer a few simple questions and receive a customized prompt that you can enter in ChatGPT to receive your personalized routine.
+    
+    div.column.center.main-text
+      h3 SELECT AN OPTION TO BEGIN <br />
+      button.center Diet Plan <br />
+      button.center Exercise Routine <br /> 
+      button.center Complete Fitness Routine <br />
+

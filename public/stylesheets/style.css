@@ -1,4 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 body {
   margin: 2%;
   color: black;
@@ -7,28 +26,56 @@ body {
   font-size: 1.5rem;
 }
 
-h1 {
+h1, h3 {
   font-weight: 400;
-  color: #B8CFF5;
-  border-bottom: 2px solid #B8CFF5;
+  color: #A1B5D6;
+  border-bottom: 2px solid #A1B5D6;
 }
 
-.main-page {
-  padding: 5%;
+.center {
   text-align: center;
 }
 
-.main-text {
-  padding: 0.5%;
+.right-col {
+  width: 50%;
+  right: 0;
 }
 
-img {
+.left-col {
+  width: 50%;
+  left: 0;
+}
+
+.main-text {
+  padding: 5%;
+}
+
+.extra-padding {
+  padding: 10%;
+}
+
+.background-image {
+  opacity: 0.3;
   text-align: right;
-  width: 60%;
+  width: 70%;
   position: absolute;
   right: 0px;
   bottom: 0px;
   z-index: -1;
+}
+
+button {
+  padding: 1.5%;
+  margin: 1rem;
+  border: 3px solid #A1B5D6;
+  background-color: #A1B5D6;
+  color: white;
+  font-size: 1.5rem;
+  width: 25rem;
+}
+
+button:hover {
+  box-shadow: 0 0 18px rgba(33, 33, 33, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */
