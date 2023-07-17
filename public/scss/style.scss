@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+
+$main_primary_teal: #ACEFF5;
+$peach: #F5CAC4;
+$light_purple_blue: #B8CFF5;
+$yellow: #F5D493;
+$mint_green: #9FF5CC;
+
+body { 
+    margin: 2%; 
+    color: black; 
+    font-family: 'Roboto Condensed', sans-serif; 
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-weight: 400;
+    color: $light_purple_blue; 
+    border-bottom: 2px solid $light_purple_blue;
+}
+
+.main-page {
+    padding: 5%;
+    text-align: center;
+}
+
+.main-text { padding: 0.5%; }
+
+img {
+    text-align: right;
+    width: 60%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
