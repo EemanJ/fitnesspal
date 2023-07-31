@@ -6,6 +6,7 @@ $light_purple_blue: #A1B5D6;
 $shadow: rgba(33, 33, 33, 0.5);
 $yellow: #F5D493;
 $mint_green: #9FF5CC;
+// $grad_blue_green: linear-gradient(90deg, rgba(161,181,214,1) 0%, rgba(172,239,245,1) 35%, rgba(159,245,204,1) 100%);
 
 // Illustration colour used for undraw images: #D5D5E0.
 
@@ -105,5 +106,41 @@ button:hover {
 }
 
 .questions {
+    margin-top: 10%;
     width: 100%;
+}
+
+.question {
+    background-color: white;
+    padding: 6%;
+    box-shadow: 0 0 18px $shadow;
+    border-radius: 1rem;
+    margin: 5%;
+}
+
+.option-button {
+    width: 18rem;
+    padding: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    background-color: transparent;
+    color: $light_purple_blue;
+    border-radius: 0.25rem;
+    border: 2px solid $light_purple_blue;
+    font-size: 1rem;
+    min-width: max-content;
+}
+
+.option-button:hover {
+    box-shadow: 0 0 18px $shadow;
+}
+
+.option-button:active, .option-button.selected {
+    background-color: $light_purple_blue;
+    color: white;
+}
+
+input {
+    height: 2rem;
+    margin: 2%;
 }
