@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap");
+@media print {
+  @page {
+    height: 6.8in;
+    width: 3in;
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: rotateZ(90deg);
+  }
+}
 * {
   box-sizing: border-box;
 }
 
-/* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 50%;
@@ -11,7 +19,6 @@
   height: 100%;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -23,6 +30,10 @@
     width: 100%;
   }
 }
+.scroll {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 2%;
   color: black;
@@ -55,6 +66,11 @@ h1, h3 {
   padding: 5%;
 }
 
+.main-page {
+  height: 100%;
+  width: 100%;
+}
+
 .extra-padding {
   padding: 10%;
 }
@@ -81,6 +97,10 @@ button {
 
 button:hover {
   box-shadow: 0 0 18px rgba(33, 33, 33, 0.5);
+}
+
+.questions {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

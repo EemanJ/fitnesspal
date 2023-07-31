@@ -9,10 +9,20 @@ $mint_green: #9FF5CC;
 
 // Illustration colour used for undraw images: #D5D5E0.
 
+@media print {
+    @page {
+        height: 6.8in;
+        width: 3in;
+        margin-top: 0;
+        margin-bottom: 0;
+        transform: rotateZ(90deg);
+    }
+}
+
 * {
     box-sizing: border-box;
   }
-/* Create two equal columns that floats next to each other */
+
 .column {
     float: left;
     width: 50%;
@@ -20,19 +30,19 @@ $mint_green: #9FF5CC;
     height: 100%;;
 }
   
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-
 @media screen and (max-width: 1000px) {
     .column {
       width: 100%;
     }
 }
+
+.scroll{scroll-behavior: smooth;}
 
 body { 
     margin: 2%; 
@@ -65,6 +75,8 @@ h1, h3 {
 
 .main-text { padding: 5%; }
 
+.main-page { height: 100%; width: 100%;}
+
 .extra-padding { padding: 10%; }
 
 .background-image {
@@ -89,7 +101,9 @@ button {
 }
 
 button:hover {
-    // background-color: $light_purple_blue;
-    // color: white;
     box-shadow: 0 0 18px $shadow; 
+}
+
+.questions {
+    width: 100%;
 }
