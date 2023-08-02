@@ -208,11 +208,14 @@ input {
 
 .prompt-copy:hover {
   box-shadow: 0 0 18px rgba(33, 33, 33, 0.5);
+  background-color: #A1B5D6;
+  color: white;
 }
 
 .prompt-copy:active {
   background-color: #A1B5D6;
   color: white;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=style.css.map */

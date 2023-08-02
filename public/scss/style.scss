@@ -212,9 +212,12 @@ input {
 
 .prompt-copy:hover {
     box-shadow: 0 0 18px $shadow;
+    background-color: $light_purple_blue;
+    color: white;
 }
 
 .prompt-copy:active {
     background-color: $light_purple_blue;
     color: white;
+    box-shadow: none;
 }
