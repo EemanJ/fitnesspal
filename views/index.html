@@ -4,6 +4,8 @@
         <title></title>
         <link rel="shortcut icon" href="data:;base64,iVBORw0KGgo=">
         <link rel="stylesheet" href="/stylesheets/style.css">
+
+        <script src="/javascripts/scripts.js"></script> 
     </head>
     
     <body>
@@ -19,9 +21,9 @@
                     <p>Answer a few simple questions and receive a customized prompt that you can enter in ChatGPT to receive your personalized routine.</p>
                 </div>
 
-                <div class="column center main-text">
+                <div class="column center main-button-col">
                     <a href="#dietplan">
-                        <button class="center">Start my new fitness plan!</button>
+                        <button class="center" style="padding: 3%;">Start my new fitness plan!</button>
                     </a>
                 </div>
 
@@ -32,75 +34,93 @@
                     <h2>Tell us about yourself</h2>
 
                     <div class="question center" id="questions">
-                        <p id="gender">Specify your gender please:</p>
-                        <button class="option-button" id="male" value="male">Male</button> <br />
-                        <button class="option-button" id="female" value="female">Female</button> <br />
-                        <button class="option-button" id="unspecified" value="unspecified">Do not wish to specify</button> <br />
+                        <div id="gender-q">
+                            <p id="gender">Specify your gender please:</p>
+                            <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label> <br />
+                            <input type="radio" name="gender" value="female" id="female"><label for="female">Female</label> <br />
+                            <input type="radio" name="gender" value="unspecified" id="unspecified"><label for="unspecified">Do not wish to specify</label> <br />
+                        </div>
                         
                         <br /><br />
 
-                        <p id="age-q">How old are you?</p>
-                        <input type="number" id="age" name="age"><br><br>
-
-                        <!-- <br /><br /> -->
+                        <div id="age-q">
+                            <p id="age-q">How old are you?</p>
+                            <input type="number" id="age" name="age" placeholder="Age">Years<br><br>
+                        </div>
                         
-                        <p id="height-q">Enter your height (in cm):</p>
-                        <input type="number" id="height" name="height"><br><br>
+                        <div id="height-q">
+                            <p id="height-q">Enter your height (in cm):</p>
+                            <input type="number" id="height" name="height" placeholder="Height(cm)">cm<br><br>
+                        </div>
+                        
+                        <div id="weight-q">
+                            <p id="weight-q">Enter your current weight (in kgs):</p>
+                            <input type="number" id="weight" name="weight" placeholder="Weight(kgs)">kgs<br><br>
+                        </div>
 
-                        <p id="weight-q">Enter your current weight (in kgs):</p>
-                        <input type="number" id="weight" name="weight"><br><br>
-
-                        <p id="health-goals-q">What are your health goals?</p>
-                        <button class="option-button" id="weight-loss" value="weight-loss">Lose some weight</button> <br />
-                        <button class="option-button" id="weight-gain" value="weight-gain">Gain weight</button> <br />
-                        <button class="option-button" id="muscle-gain" value="muscle-gain">Gain more muscle</button> <br />
-                        <button class="option-button" id="manage-health-condition" value="manage-health-condition">Manage a health condition</button> <br />
-                        <button class="option-button" id="good-diet" value="good-diet">Just have a good and balanced diet</button> <br />
-
+                        <div id="health-q">
+                            <p id="health-goals-q">What are your health goals?</p>
+                            <button class="option-button" id="weight-loss" value="weight-loss" onclick="toggle(this)">Lose weight</button> <br />
+                            <button class="option-button" id="weight-gain" value="weight-gain" onclick="toggle(this)">Gain weight</button> <br />
+                            <button class="option-button" id="muscle-gain" value="muscle-gain" onclick="toggle(this)">Gain more muscle</button> <br />
+                            <button class="option-button" id="good-diet" value="maintain-balanced-diet" onclick="toggle(this)">Maintain good and balanced diet</button> <br />
+                        </div>
+                        
                         <br /><br />
 
-                        <p id="health-conditions-q">Any health conditions you want to manage?</p>
-                        <button class="option-button" id="type2-diabetes" value="type2-diabetes">Type 2 Diabetes</button>
-                        <button class="option-button" id="high-cholestrol" value="high-cholestrol">High Cholestrol Levels</button> <br />
-                        <button class="option-button" id="hypertension" value="hypertension">Hypertension</button>
-                        <button class="option-button" id="heart-disease" value="heart-disease">Heart Disease</button> <br />
-                        <button class="option-button" id="gerd" value="gerd">Gerd</button>
-                        <button class="option-button" id="ibs" value="ibs">Irritable Bowel Syndrome</button> <br />
-                        <button class="option-button" id="pcos" value="pcos">PCOS</button> 
-                        <button class="option-button" id="celiac" value="celiac">Celiac Disease</button> <br />
-                        Other:
-                        <input type="text" id="health-condition-other" name="health-condition-other">
-
+                        <div id="conditions-q">
+                            <p id="health-conditions-q">Is there any health conditions you want to manage?</p>
+                            <button class="option-button" id="type2-diabetes" value="type2-diabetes" onclick="toggle(this)">Type 2 Diabetes</button>
+                            <button class="option-button" id="high-cholestrol" value="high-cholestrol" onclick="toggle(this)">High Cholestrol Levels</button> <br />
+                            <button class="option-button" id="hypertension" value="hypertension" onclick="toggle(this)">Hypertension</button>
+                            <button class="option-button" id="heart-disease" value="heart-disease" onclick="toggle(this)">Heart Disease</button> <br />
+                            <button class="option-button" id="gerd" value="gerd" onclick="toggle(this)">GERD</button>
+                            <button class="option-button" id="ibs" value="ibs" onclick="toggle(this)">Irritable Bowel Syndrome</button> <br />
+                            <button class="option-button" id="pcos" value="pcos" onclick="toggle(this)">PCOS</button> 
+                            <button class="option-button" id="celiac" value="celiac" onclick="toggle(this)">Celiac Disease</button> <br />
+                            Other:
+                            <input type="text" id="health-condition-other" name="health-condition-other">
+                        </div>
+                        
                         <br /><br />
                         
-                        <p id="activity-level-q">How active are you in your daily routine?</p>
-                        <button class="option-button" id="sedentary" value="sedentary">Sedentary</button> <br />
-                        <button class="option-button" id="lightly-active" value="lightly-active">Lightly active</button> <br />
-                        <button class="option-button" id="moderately-active" value="moderately-active">Moderately active</button> <br />
-                        <button class="option-button" id="manage-health-condition" value="manage-health-condition">Very active</button> <br />
-
+                        <div id="activity-q">
+                            <p id="activity-level-q">How active are you in your daily routine?</p>
+                            <input type="radio" name="activity" value="sedentary" id="sedentary"><label for="sedentary">Sedentary</label> <br />
+                            <input type="radio" name="activity" value="lightly-active" id="lightly-active"><label for="lightly-active">Lightly Active</label> <br />
+                            <input type="radio" name="activity" value="moderately-active" id="moderately-active"><label for="moderately-active">Moderately Active</label> <br />
+                            <input type="radio" name="activity" value="very-active" id="very-active"><label for="very-active">Very Active</label> <br />
+                        </div>
+                        
                         <br /><br />
 
-                        <p id="dietary-pref-q">Do you have any dietary preferences?</p>
-                        <button class="option-button" id="vegan" value="vegan">Vegan</button> 
-                        <button class="option-button" id="vegetarian" value="vegetarian">Vegetarian</button> <br />
-                        <button class="option-button" id="pescatarian" value="pescatarian">Pescatarian</button> 
-                        <button class="option-button" id="halal" value="Halal">Halal</button> <br />
-                        <button class="option-button" id="kosher" value="kosher">Kosher</button> 
-                        <button class="option-button" id="keto" value="keto">Keto diet</button> <br />
-                        Other:
-                        <input type="text" id="health-condition-other" name="health-condition-other">
-
+                        <div id="preferences-q">
+                            <p id="dietary-pref-q">Do you have any dietary preferences?</p>
+                            <button class="option-button" id="vegan" value="vegan" onclick="toggle(this)">Vegan</button> 
+                            <button class="option-button" id="vegetarian" value="vegetarian" onclick="toggle(this)">Vegetarian</button> <br />
+                            <button class="option-button" id="pescatarian" value="pescatarian" onclick="toggle(this)">Pescatarian</button> 
+                            <button class="option-button" id="halal" value="Halal" onclick="toggle(this)">Halal</button> <br />
+                            <button class="option-button" id="kosher" value="kosher" onclick="toggle(this)">Kosher</button> 
+                            <button class="option-button" id="keto" value="keto" onclick="toggle(this)">Keto diet</button> <br />
+                            Other:
+                            <input type="text" id="health-condition-other" name="health-condition-other">
+                        </div>
+                        
                         <br /><br />
 
-                        <p id="intol-aller-q">Do you have any food intolerances and allergies?</p>
-                        <button class="option-button" id="lactose-intolerance" value="lactose-intolerance">Lactose Intolerance</button> 
-                        <button class="option-button" id="gluten-intolerance" value="gluten-intolerance">Gluten Intolerance</button> <br />
-                        <button class="option-button" id="nut-allergy" value="nut-allergy">Nut Allergy</button> 
-                        <button class="option-button" id="fish-allergy" value="fish-allergy">Fish Allergy</button> <br />
-                        Other:
-                        <input type="text" id="health-condition-other" name="health-condition-other">
+                        <div id="intolallerg-q">
+                            <p id="intol-aller-q">Do you have any food intolerances and allergies?</p>
+                            <button class="option-button" id="lactose-intolerance" value="lactose-intolerance" onclick="toggle(this)">Lactose Intolerance</button> 
+                            <button class="option-button" id="gluten-intolerance" value="gluten-intolerance" onclick="toggle(this)">Gluten Intolerance</button> <br />
+                            <button class="option-button" id="nut-allergy" value="nut-allergy" onclick="toggle(this)">Nut Allergy</button> 
+                            <button class="option-button" id="fish-allergy" value="fish-allergy" onclick="toggle(this)">Fish Allergy</button> <br />
+                            Other:
+                            <input type="text" id="health-condition-other" name="health-condition-other">
+                        </div>
+                        
+                        <br /><br /><br />
 
+                        <button id="submit" onclick="submitForm()">Submit</button>
                     </div>
                 </div>
 

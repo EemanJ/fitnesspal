@@ -76,6 +76,8 @@ h1, h3 {
 
 .main-text { padding: 5%; }
 
+.main-button-col {padding-top: 15%; }
+
 .main-page { height: 100%; width: 100%;}
 
 .extra-padding { padding: 10%; }
@@ -119,7 +121,7 @@ button:hover {
 }
 
 .option-button {
-    width: 18rem;
+    width: 17rem;
     padding: 0.5%;
     padding-left: 1.5%;
     padding-right: 1.5%;
@@ -140,7 +142,49 @@ button:hover {
     color: white;
 }
 
+input[type='radio'] { 
+    display: none; 
+}
+
+label { 
+    width: 17rem;
+    display: block;
+    margin: 1.5%;
+    padding: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    background-color: transparent;
+    color: $light_purple_blue;
+    border-radius: 0.25rem;
+    border: 2px solid $light_purple_blue;
+    font-size: 1.1rem;
+    min-width: max-content;
+    font-family: 'Roboto Condensed', sans-serif; 
+    font-weight: 500;
+    display: inline-flex;
+    justify-content: center;
+}
+
+input[type='radio']:hover + label {
+    box-shadow: 0 0 18px $shadow;
+}
+
+input[type='radio']:checked + label {
+    background-color: $light_purple_blue;
+    color: white;
+}
+
+input[type='radio'].selected + label {
+    background-color: $light_purple_blue;
+    color: white;
+}
+
 input {
     height: 2rem;
     margin: 2%;
+}
+
+.submit {
+    background-color: $light_purple_blue;
+    color: white;
 }

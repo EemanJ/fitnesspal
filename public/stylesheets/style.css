@@ -66,6 +66,10 @@ h1, h3 {
   padding: 5%;
 }
 
+.main-button-col {
+  padding-top: 15%;
+}
+
 .main-page {
   height: 100%;
   width: 100%;
@@ -113,7 +117,7 @@ button:hover {
 }
 
 .option-button {
-  width: 18rem;
+  width: 17rem;
   padding: 0.5%;
   padding-left: 1.5%;
   padding-right: 1.5%;
@@ -134,9 +138,51 @@ button:hover {
   color: white;
 }
 
+input[type=radio] {
+  display: none;
+}
+
+label {
+  width: 17rem;
+  display: block;
+  margin: 1.5%;
+  padding: 0.5%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  background-color: transparent;
+  color: #A1B5D6;
+  border-radius: 0.25rem;
+  border: 2px solid #A1B5D6;
+  font-size: 1.1rem;
+  min-width: max-content;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  justify-content: center;
+}
+
+input[type=radio]:hover + label {
+  box-shadow: 0 0 18px rgba(33, 33, 33, 0.5);
+}
+
+input[type=radio]:checked + label {
+  background-color: #A1B5D6;
+  color: white;
+}
+
+input[type=radio].selected + label {
+  background-color: #A1B5D6;
+  color: white;
+}
+
 input {
   height: 2rem;
   margin: 2%;
+}
+
+.submit {
+  background-color: #A1B5D6;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
