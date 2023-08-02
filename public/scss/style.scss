@@ -59,6 +59,10 @@ h1, h3 {
     border-bottom: 2px solid $light_purple_blue;
 }
 
+.prompt-h3 {
+    margin-top: 8%;
+}
+
 .center {
     text-align: center;
 }
@@ -189,6 +193,28 @@ input {
 }
 
 .submit {
+    background-color: $light_purple_blue;
+    color: white;
+}
+
+.prompt-copy {
+    width: 7rem;
+    padding: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    background-color: transparent;
+    color: $light_purple_blue;
+    border-radius: 0.25rem;
+    border: 2px solid $light_purple_blue;
+    font-size: 1rem;
+    min-width: max-content;
+}
+
+.prompt-copy:hover {
+    box-shadow: 0 0 18px $shadow;
+}
+
+.prompt-copy:active {
     background-color: $light_purple_blue;
     color: white;
 }

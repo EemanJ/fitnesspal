@@ -52,6 +52,10 @@ function removeValues(e) {
     }
 }
 
+var prompt1;
+var prompt2;
+var prompt3;
+
 function submitForm() {
 
     if (!document.getElementById("age").value) {
@@ -75,18 +79,26 @@ function submitForm() {
             healthgoals = healthgoals.concat(', ', document.querySelector('input[name="goals"]:checked').value);
             intolallerg = intolallerg.concat(', ', document.getElementById('health-condition-other').value);
 
-            var prompt1 = 'Give me a detailed customized diet plan, with urls to online recipes, that includes 4 meals (breakfast, lunch, snacks, and dinner) for “gender= ' + gender + '”, “years=' + age + '”, “height=' + height + 'cm”, “weight=' + weight + 'kg”, “health goals=' + healthgoals + '”, , "known health conditions to manage= ' + conditions + '“activity level=' + activity + '”, “food preference=' + preferences + '”, “allergies=' + intolallerg + '”, “others=”. Include the calorie count for each meal. Also, mention the amount of daily calorie intake a person of that height and weight should consume.'
-            var prompt2 = '"Hey there, I am a ' + age +'-year-old ' + gender + ' hoping to improve my overall health and achieve my health goals of' + healthgoals + '. I am ' + height + 'cm tall and currently weigh ' + weight + 'kgs. My daily activity level is ' + activity + '. I prefer ' + preferences + ' food and need to avoid ' + intolallerg + ' due to intolerance/allergies. Please create a personalized meal diet plan to fit my needs and preferences including calorie count and urls to recipes for each meal.'
-            var prompt3 = 'Create a daily customized ' + preferences + ' and give urls for recipes. The person is a ' + age + ' year old, ' + gender + ', weighing ' + weight + 'kgs and ' + height + 'cm tall. The person should avoid ' + intolallerg + ' due to allergies. The meal plan should include five meals (breakfast, mid-morning snack, lunch, afternoon snack, and dinner) along with their respective calorie ranges. Please emphasize the importance of portion control and the need for a variety of fruits, vegetables, legumes, and seeds in the plan. Also, highlight the significance of staying well-hydrated by drinking at least 8 glasses (64 ounces) of water daily. Lastly, advise the person to consult with a healthcare professional or a registered dietitian if they have any specific dietary restrictions or medical conditions.'
+            prompt1 = 'Give me a detailed customized diet plan, with urls to online recipes, that includes 4 meals (breakfast, lunch, snacks, and dinner) for “gender= ' + gender + '”, “years=' + age + '”, “height=' + height + 'cm”, “weight=' + weight + 'kg”, “health goals=' + healthgoals + '”, , "known health conditions to manage= ' + conditions + '“activity level=' + activity + '”, “food preference=' + preferences + '”, “allergies=' + intolallerg + '”, “others=”. Include the calorie count for each meal. Also, mention the amount of daily calorie intake a person of that height and weight should consume.'
+            prompt2 = '"Hey there, I am a ' + age +'-year-old ' + gender + ' hoping to improve my overall health and achieve my health goals of' + healthgoals + '. I am ' + height + 'cm tall and currently weigh ' + weight + 'kgs. My daily activity level is ' + activity + '. I prefer ' + preferences + ' food and need to avoid ' + intolallerg + ' due to intolerance/allergies. Please create a personalized meal diet plan to fit my needs and preferences including calorie count and urls to recipes for each meal.'
+            prompt3 = 'Create a daily customized ' + preferences + ' and give urls for recipes. The person is a ' + age + ' year old, ' + gender + ', weighing ' + weight + 'kgs and ' + height + 'cm tall. The person should avoid ' + intolallerg + ' due to allergies. The meal plan should include five meals (breakfast, mid-morning snack, lunch, afternoon snack, and dinner) along with their respective calorie ranges. Please emphasize the importance of portion control and the need for a variety of fruits, vegetables, legumes, and seeds in the plan. Also, highlight the significance of staying well-hydrated by drinking at least 8 glasses (64 ounces) of water daily. Lastly, advise the person to consult with a healthcare professional or a registered dietitian if they have any specific dietary restrictions or medical conditions.'
             
-            document.getElementById("questions").innerHTML = `<p>` + prompt2 + `</p>
-            <button onclick="reload_questions()">Retry</button>`
+            document.getElementById("prompt1").innerHTML = prompt1;
+            document.getElementById("prompt2").innerHTML = prompt2;
+            document.getElementById("prompt3").innerHTML = prompt3;
+
+            document.getElementById("heading").innerHTML = 'Resulting prompts';
+
+            document.getElementById('prompts').style.display = 'block';
+
+            document.getElementById('questions').style.display = 'none';
+
         }
-    }
-    
+    } 
 }
 
 function reload_questions() {
+    document.getElementById('prompts').style.display = 'hidden';
     location.reload();
 }
 
@@ -163,4 +175,16 @@ function no_input(e) {
 
 function alert_missing_vals() {
     alert('Missing or incorrect input values have been highlighted in red. Please correct to proceed.');
+}
+
+function copy_prompt_1() {
+    navigator.clipboard.writeText(prompt1);
+}
+
+function copy_prompt_2() {
+    navigator.clipboard.writeText(prompt2);
+}
+
+function copy_prompt_3() {
+    navigator.clipboard.writeText(prompt3);
 }
