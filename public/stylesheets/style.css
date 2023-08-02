@@ -180,6 +180,10 @@ input {
   margin: 2%;
 }
 
+.empty-input {
+  border: 2px solid red !important;
+}
+
 .submit {
   background-color: #A1B5D6;
   color: white;

@@ -45,7 +45,7 @@
 
                         <div id="age-q">
                             <p id="age-q">How old are you?</p>
-                            <input type="number" id="age" name="age" placeholder="Age">Years<br><br>
+                            <input type="number" id="age" name="age" placeholder="Age" value="18" min="18">Years<br><br>
                         </div>
                         
                         <div id="height-q">
@@ -59,11 +59,11 @@
                         </div>
 
                         <div id="health-q">
-                            <p id="health-goals-q">What are your health goals?</p>
-                            <button class="option-button" id="weight-loss" value="weight-loss" onclick="toggle(this)">Lose weight</button> <br />
-                            <button class="option-button" id="weight-gain" value="weight-gain" onclick="toggle(this)">Gain weight</button> <br />
+                            <p id="health-goals-q">What are your health goals? (Must select one of the first three options)</p>
+                            <input type="radio" name="goals" value="weight-loss" id="weight-loss"><label for="weight-loss">Lose weight</label> <br />
+                            <input type="radio" name="goals" value="weight-gain" id="weight-gain"><label for="weight-gain">Gain weight</label> <br />
+                            <input type="radio" name="goals" value="maintain-balanced-diet" id="maintain-balanced-diet"><label for="maintain-balanced-diet">Maintain good and balanced diet</label> <br />
                             <button class="option-button" id="muscle-gain" value="muscle-gain" onclick="toggle(this)">Gain more muscle</button> <br />
-                            <button class="option-button" id="good-diet" value="maintain-balanced-diet" onclick="toggle(this)">Maintain good and balanced diet</button> <br />
                         </div>
                         
                         <br /><br />
@@ -96,14 +96,13 @@
 
                         <div id="preferences-q">
                             <p id="dietary-pref-q">Do you have any dietary preferences?</p>
-                            <button class="option-button" id="vegan" value="vegan" onclick="toggle(this)">Vegan</button> 
-                            <button class="option-button" id="vegetarian" value="vegetarian" onclick="toggle(this)">Vegetarian</button> <br />
-                            <button class="option-button" id="pescatarian" value="pescatarian" onclick="toggle(this)">Pescatarian</button> 
-                            <button class="option-button" id="halal" value="Halal" onclick="toggle(this)">Halal</button> <br />
-                            <button class="option-button" id="kosher" value="kosher" onclick="toggle(this)">Kosher</button> 
-                            <button class="option-button" id="keto" value="keto" onclick="toggle(this)">Keto diet</button> <br />
-                            Other:
-                            <input type="text" id="health-condition-other" name="health-condition-other">
+                            <input type="radio" name="diet" value="vegan" id="vegan"><label for="vegan">Vegan</label> 
+                            <input type="radio" name="diet" value="vegetarian" id="vegetarian"><label for="vegetarian">Vegetarian</label> <br />
+                            <input type="radio" name="diet" value="pescatarian" id="pescatarian"><label for="pescatarian">Pescatarian</label>
+                            <input type="radio" name="diet" value="halal" id="halal"><label for="halal">Halal</label> <br />
+                            <input type="radio" name="diet" value="kosher" id="kosher"><label for="kosher">Kosher</label>
+                            <input type="radio" name="diet" value="keto-diet" id="keto-diet"><label for="keto-diet">Keto</label> <br />
+                            <input type="radio" name="diet" value="no" id="none"><label for="none">None</label> <br />
                         </div>
                         
                         <br /><br />
@@ -115,7 +114,8 @@
                             <button class="option-button" id="nut-allergy" value="nut-allergy" onclick="toggle(this)">Nut Allergy</button> 
                             <button class="option-button" id="fish-allergy" value="fish-allergy" onclick="toggle(this)">Fish Allergy</button> <br />
                             Other:
-                            <input type="text" id="health-condition-other" name="health-condition-other">
+                            <input type="text" id="health-condition-other" name="health-condition-other" style="width:12rem">
+                            <button class="option-button" id="nothing" value="nothing" onclick="toggle(this)">Nothing</button> 
                         </div>
                         
                         <br /><br /><br />

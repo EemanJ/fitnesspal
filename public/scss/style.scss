@@ -184,6 +184,10 @@ input {
     margin: 2%;
 }
 
+.empty-input {
+    border: 2px solid red !important;
+}
+
 .submit {
     background-color: $light_purple_blue;
     color: white;
